@@ -38,12 +38,13 @@ function handleGetMovies(req, res) {
 		);
 	}
 
-  if (avg_vote) {
-    response = response.filter(movie => Number(movie.avg_vote) >= Number(avg_vote))
-    }
+	if (avg_vote) {
+		response = response.filter(
+			(movie) => Number(movie.avg_vote) >= Number(avg_vote)
+		);
+	}
 
 	res.json(response);
-	
 }
 
 app.get('/movie', handleGetMovies);
